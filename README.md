@@ -53,10 +53,14 @@ WHERE district LIKE 'K%a' AND district NOT LIKE '% %';
 
 ```
 SELECT DISTINCT district - выбирает уникальные значения столбца district
+
 FROM address - из таблицы address
+
 WHERE district LIKE 'K%a' - где название района начинается на K и заканчивается на a
 % - любое количество любых символов
+
 AND district NOT LIKE '% %' - и не содержит пробел
+
 ![alt text](image.png)
 
 
@@ -70,10 +74,15 @@ WHERE payment_date BETWEEN '2005-06-15 00:00:00' AND '2005-06-18 23:59:59'
 AND amount > '10.00' ORDER BY amount DESC;
 ```
 SELECT * - выбрать все столбцы
+
 FROM payment - из таблицы payment
+
 WHERE payment_date BETWEEN ... AND ... - где дата платежа в указанном диапазоне
+
 AND amount > 10.00 - и сумма больше 10
+
 ORDER BY payment_date - сортировка по дате платежа
+
 
 ![alt text](image-1.png)
 # Задание 3
@@ -87,8 +96,11 @@ ORDER BY rental_date DESC
 LIMIT 5;
 ```
 SELECT * - выбрать все столбцы
+
 FROM rental - из таблицы rental
+
 ORDER BY rental_date DESC - сортировка по дате аренды в обратном порядке (новые сначала)
+
 LIMIT 5 - ограничить результат 5 записями
 
 
@@ -114,10 +126,15 @@ WHERE (first_name = 'Kelly' OR first_name = 'Willie')
 ```
 
 REPLACE(LOWER(first_name), 'll', 'pp') - преобразования:
+
 LOWER(first_name) - переводит имя в нижний регистр
+
 REPLACE(..., 'll', 'pp') - заменяет 'll' на 'pp'
+
 LOWER(last_name) - переводит фамилию в нижний регистр
+
 WHERE (first_name = 'Kelly' OR first_name = 'Willie') - где имя Kelly или Willie
+
 AND active = 1 - и покупатель активен
 
 
@@ -156,9 +173,14 @@ SELECT
 FROM customer;
 
 ```
-Берет часть email до символа @ (префикс)/n
+Берет часть email до символа @ (префикс)
+
 Форматирует префикс: первая буква в верхнем регистре, остальные в нижнем
+
 Берет часть email после символа @ (домен)
+
 Форматирует домен: первая буква в верхнем регистре, остальные в нижнем
+
 Возвращает исходный email и две отформатированные части
+
 ![alt text](image-6.png)
